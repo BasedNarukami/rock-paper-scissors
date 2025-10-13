@@ -1,14 +1,15 @@
 let randomNumber = Math.random();
-let randomString;
+let chosenString;
 
-function getComputerChoice(randomString)
+function getComputerChoice(Number)
 {
-    if (randomNumber < 0.33) 
+    console.log(Number);
+    if (Number < 0.33) 
         {
              return "Rock";
         }
 
-    else if (0.33 < randomNumber < 0.66)
+    else if (0.33 <= Number && Number < 0.66)
         {
             return "Paper";
         }
@@ -19,10 +20,12 @@ function getComputerChoice(randomString)
         }
 }
 
-console.log(randomString);
+chosenString = console.log(getComputerChoice(randomNumber));
 
 function getHumanChoice()
 {
-
+    humanChoice = prompt("Please enter Rock, Paper, or Scissors: ");
+    return humanChoice;
 }
 
+console.log(getHumanChoice());
