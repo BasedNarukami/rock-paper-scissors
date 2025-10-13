@@ -20,7 +20,6 @@ function getComputerChoice(Number)
         }
 }
 
-chosenString = console.log(getComputerChoice(randomNumber));
 
 function getHumanChoice()
 {
@@ -28,4 +27,49 @@ function getHumanChoice()
     return humanChoice;
 }
 
-console.log(getHumanChoice());
+function playRound()
+{
+    let humanScore = 0;
+    let computerScore = 0;
+
+    while (humanScore < 5 && computerScore < 5)
+        {
+            
+           const humanChoice = getHumanChoice();
+           const computerChoice = getComputerChoice(randomNumber);
+
+            if (humanChoice == computerChoice)
+            {
+                console.log("It's a Tie!");
+            }
+
+            else if ((humanChoice == "Scissors" && computerChoice == "Paper") || (humanChoice == "Rock" && computerChoice == "Scissors") || (humanChoice == "Paper" && computerChoice == "Rock"))
+            {
+                console.log("You win this round!!");
+                humanScore++;
+            }
+
+            else
+            {
+                console.log("You lose this round!!");
+                computerScore++;
+            }  
+            
+            console.log(humanScore);
+            console.log(computerScore);
+        } 
+
+    if (humanScore > computerScore)
+    {
+        console.log("You win!");
+    }
+
+    else 
+    {
+        console.log("You lose!");
+    }
+
+}
+
+
+playRound();
